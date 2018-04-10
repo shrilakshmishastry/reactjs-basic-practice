@@ -2,39 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>REACTJS | PRACTICE</title>
+    <title>Specs | React</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
   </head>
   <body>
-    <div id="root">
-
-    </div>
     <script type="text/babel">
-  // var  Greeting = React.createClass({
-  //   render:function(){
-  //     return(<h2>hello world</h2>
-  //     );
-  //   }
-  // });
-  // ReactDOM.render(
-  //     <Greeting />,
-  //     document.getElementById('root')
-  // );
-  var Hello = React.createClass({
-    render:function(){
-      return(
-        <h1 className="font-weight-bold">hello world</h1>
-      );
+     <div id="myDiv"></div>
+    ReactDOM.render(
+    <MyComponent/>,
+    document.getElementById('myDiv')
+);
+    var MyComponent = React.createClass({
+    getInitialState: function(){
+        return {
+            count: 5
+        }
+    },
+    render: function(){
+        return (
+            <h1>{this.state.count}</h1>
+        )
     }
-  });
-  ReactDOM.render(
-    <Hello />,
-    document.getElementById('root')
-  );
-  </script>
+});
+    </script>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>

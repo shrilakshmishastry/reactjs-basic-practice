@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event | React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+  </head>
+  <body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+
+    var Event = React.createClass({
+      submit: function(){
+        alert('submitting');
+      },
+      remove: function(){
+        alert('removing');
+      },
+      render: function(){
+        return (
+          <div>
+            <div>{this.props.children}</div>
+            <button  onClick={this.submit} className="btn btn-primary">submit</button>
+            <button onClick={this.remove} className="btn btn-danger">removw</button>
+          </div>
+        );
+      }
+
+    });
+    ReactDOM.render(
+      <div className='container'>
+      <div className='row'>
+      <div className='col-md-4 bg-info'>
+      <Event>shrilakshmi</Event>
+      <Event>shriHARI</Event>
+      </div>
+      </div>
+
+      </div>,
+      document.getElementById('root')
+
+    );
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+  </body>
+</html>

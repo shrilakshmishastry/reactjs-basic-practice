@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>State | React</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+  </head>
+  </head>
+  <body>
+      <div id="root">
+
+      </div>
+      <script type="text/babel">
+        var State = React.createClass({
+          getInitialState:function(){
+            return{checked:true}
+          },
+          checkHandle:function(){
+            this.setState({checked: !this.state.checked})
+
+          },
+          render: function(){
+            var msg;
+            if(this.state.checked)
+            {
+              msg='checked';
+            }else {
+              msg = 'unchecked';
+            }
+            return(
+              <div>
+                <input type='checkbox' onChange={this.checkHandle} defaultChecked={this.state.checked}/>
+                <h1>check box is {msg}</h1>
+              </div>
+
+            );
+          }
+        });
+        ReactDOM.render(
+          <State/>,
+          document.getElementById('root')
+        );
+      </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+  </body>
+</html>
